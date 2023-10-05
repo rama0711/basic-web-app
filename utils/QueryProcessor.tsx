@@ -14,11 +14,9 @@ export default function QueryProcessor(query: string): string {
   
 
   if (query.toLowerCase().includes("largest")){
-    console.log("received")
     let nums = query.split(':')[1].split(',');
     nums[nums.length-1] = nums[nums.length-1].split('?')[0];
     let numbers = nums.map(Number);
-    console.log(numbers);
     const max = Math.max(...numbers);
     return(String(max));
   }
@@ -32,5 +30,14 @@ export default function QueryProcessor(query: string): string {
     return(h);
   }
 
+
+  if (query.toLowerCase().includes("multiplied") && query.toLowerCase().includes("?")){
+    let nums = query.split(" ")
+    let  f = parseInt(nums[2])
+    let y =nums[5].split("?")
+    let f2 = parseInt(y[0])
+    let h = String(f * f2)
+    return(h);
+  }
   return "";
 }
