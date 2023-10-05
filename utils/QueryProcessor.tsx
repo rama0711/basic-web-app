@@ -31,7 +31,6 @@ export default function QueryProcessor(query: string): string {
     let h = String(f + f2)
     return(h);
   }
-  let nums = query.split(" ")
-  console.log(nums)
+
   return "";
 }
