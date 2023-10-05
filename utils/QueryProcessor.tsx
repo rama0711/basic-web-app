@@ -39,5 +39,26 @@ export default function QueryProcessor(query: string): string {
     let h = String(f * f2)
     return(h);
   }
+
+  var isSquare = function(n) {
+      return n > 0 && Math.sqrt(n) % 1 === 0 && Math.cbrt(n) % 1 === 0;
+  };
+
+  if (query.toLowerCase().includes("both a square") && query.toLowerCase().includes("?")){
+    let nums = query.split(':')[1].split(',');
+    console.log(nums);
+    nums[nums.length-1] = nums[nums.length-1].split('?')[0];
+    let numbers = nums.map(Number);
+    let i = 0;
+    while (i < numbers.length){
+      if (isSquare(numbers[i])){
+        return String(numbers[i]);
+      }
+      i++;
+    }
+    return ""
+    
+  }
+
   return "";
 }
