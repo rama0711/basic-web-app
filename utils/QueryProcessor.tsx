@@ -11,8 +11,17 @@ export default function QueryProcessor(query: string): string {
     return("My Andrew ID is rsulaima.");
   }
 
-  if (query.toLowerCase().includes("what is your name?")){
-    return("rsulaima");
+  
+
+  if (query.toLowerCase().includes("largest")){
+    console.log("received")
+    let nums = query.split(':')[1].split(',');
+    nums[nums.length-1] = nums[nums.length-1].split('?')[0];
+    let numbers = nums.map(Number);
+    console.log(numbers);
+    const max = Math.max(...numbers);
+    return(String(max));
   }
+
   return "";
 }
