@@ -14,5 +14,16 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("what is your name?")){
     return("rsulaima");
   }
+  if (query.toLowerCase().includes("plus") && query.toLowerCase().includes("?")){
+    let nums = query.split(" ")
+    console.log(nums)
+    let  f = parseInt(nums[2])
+    let y =nums[4].split("?")
+    let f2 = parseInt(y[0])
+    let h = String(f + f2)
+    return(h);
+  }
+  let nums = query.split(" ")
+  console.log(nums)
   return "";
 }
